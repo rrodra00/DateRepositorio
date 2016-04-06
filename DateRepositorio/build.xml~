@@ -16,6 +16,7 @@
       <echo message="Compiling...done"/>
     </target>
 
+<!--
     <target name="run" depends="compile">
       <java classname="es.unileon.prg.PruebaPractica">
          <classpath>
@@ -23,7 +24,10 @@
          </classpath>
       </java>
     </target>
+-->
 
-    <target name="todo" depends="run"/>
+    <target name="todo"> 
+<!--depends="run"/>
+-->
 
 </project>

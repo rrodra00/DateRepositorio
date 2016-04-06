@@ -26,6 +26,8 @@
     </target>
 -->
 
-    <target name="todo" depends="run"/>
+    <target name="todo"/> 
+<!--depends="run"/>
+-->
 
 </project>
