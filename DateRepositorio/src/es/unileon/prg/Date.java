@@ -1,30 +1,31 @@
 //package es.unileon.prg;
 
 public class Date {
-	int year, month, day;
+	private int year, month, day;
 	
+	public Date(){
+		this.day=day;
+		this.month=motnh;
+		this.year=year;
+	}
+	
+	public boolean isSameYear(int year){
+		return null;
+	}
+	
+	public boolean isSameMonth(int month){
+		return null;
+	}
 
-	public static void main(String[] args) {
-		
+	public boolean isSameDay(int day){
+		return null;
 	}
 	
-	public static void isSameYear(int year){
-		
-	}
-	
-	public static void isSameMonth(int month){
-		
-	}
-
-	public static void isSameDay(int day){
-	
-	}
-	
-	String getMonthName(){
+	public String getMonthName(){
 		String mes = new String (" ");
 		switch(month){
 			case 1: mes = "Enero";
-				break;
+			break;
 			case 2: mes = "Febrero";
 			break;
 			case 3: mes = "Marzo";
@@ -51,20 +52,42 @@ public class Date {
 		return mes ;	
 	}
 	
-	String getSeasonMonth(){
+	public int checkDay(){
+		int mes = new int;
+		switch(month){
+		case 1|3:
+		day <= 31
+		break;
+		case 2:
+		if(month = "Abril"|"Junio"|"Septiembre"|"Noviembre")
+		day <=30
+		break;
+		case 3:
+		if(month = "Febrero")
+		day <= 28
+		break;
+		}
+	
+	}
+	
+	public String getSeasonMonth(){
 		String season = new String(" ");
 		switch(month){
-			case 1: season = "Invierno";
+			case 1: 
 			if (month = "Enero"|"Febrero"||"Diciembre")
+			season = "Invierno";
 			break;
-			case 2: season = "Primavera";
+			case 2: 
 			if (month == "Marzo"||"Abril"||"Mayo")
+			season = "Primavera";
 			break;
-			case 3: season = "Verano";
+			case 3: 
 			if (month == "Junio"||"Julio"||"Agosto")
+			season = "Verano";
 			break;
-			case 4: season = "Otoño";
+			case 4: 
 			if (month == "Septiembre"||"Octubre"||"Noviembre")
+			season = "Otoño";
 			break;
 		}
 		return season;
