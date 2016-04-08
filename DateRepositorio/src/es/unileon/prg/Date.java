@@ -1,60 +1,48 @@
+package es.unileon.prg;
+
 import java.util.Scanner;
 
-//package es.unileon.prg;
-
 public class Date {
-	private int day1, day2;
-	private int month1, month2;
-	private int year1, year2;
+	private String day1, day2;
+	private String month1, month2;
+	private String year1, year2;
 	
-	/*
-	public Date(){
-		this.day=day;
-		this.month=month;
-		this.year=year;
-	}
-	*/
 		
 	public void entrada(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduzca dia 1");
-		int day1 = sc.nextInt();
+		this.day1 = sc.next();
 		System.out.println("Introduzca mes 1");
-		int month1 = sc.nextInt();
-		System.out.println("Introduzca año 1");
-		int year1 = sc.nextInt();
+		this.month1 = sc.next();
+		System.out.println("Introduzca anio 1");
+		this.year1 = sc.next();
 		System.out.println("Introduzca dia 2");
-		int day2 = sc.nextInt();
+		this.day2 = sc.next();
 		System.out.println("Introduzca mes 2");
-		int month2 = sc.nextInt();
-		System.out.println("Introduzca año 2");
-		int year2 = sc.nextInt();
+		this.month2 = sc.next();
+		System.out.println("Introduzca anio 2");
+		this.year2 = sc.next();
 	}
 	
-	public boolean isSameYear(){
-		if(year1 == year2)
-		return true;
-		else
-			return false;
+	public void isSameYear(){
+		boolean isEqual = year1.equals(year2);
+		System.out.println(isEqual);
 	}
 	
-	public boolean isSameMonth(int month){
-		if(month1 == month2)
-		return true;
-		else
-			return false;
+	public void isSameMonth(){
+		boolean isEqual = month1.equals(month2);
+		System.out.println(isEqual);
 	}
 
-	public boolean isSameDay(int day){
-		if(day1 == day2)
-		return true;
-		else
-			return false;
+	public void isSameDay(){
+		boolean isEqual = day1.equals(day2);
+		System.out.println(isEqual);
 	}
 	
-	public String getMonthName(){
+	public void getMonthName(){
+		int month = Integer.parseInt(month1);
 		String mes = new String (" ");
-		switch(month1){
+		switch(month){
 			case 1: mes = "Enero";
 			break;
 			case 2: mes = "Febrero";
@@ -80,78 +68,82 @@ public class Date {
 			case 12: mes = "Diciembre";
 			break;
 		}
-		return mes ;	
+		//return mes;
+		System.out.println(mes);
 	}
 	
 	public boolean checkDay(){
-		switch(month1){
+		int day = Integer.parseInt(day1);
+		int month = Integer.parseInt(month1);
+		switch(month){
 		case 1:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 2:
-			if(day1 <= 28)
+			if(day <= 28)
 				return true;
 			else 
 				return false;
 		case 3:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 4:
-			if(day1 <= 30)
+			if(day <= 30)
 				return true;
 			else 
 				return false;
 		case 5:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 6:
-			if(day1 <= 30)
+			if(day <= 30)
 				return true;
 			else 
 				return false;
 		case 7:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 8:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 9:
-			if(day1 <= 30)
+			if(day <= 30)
 				return true;
 			else 
 				return false;
 		case 10:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		case 11:
-			if(day1 <= 30)
+			if(day <= 30)
 				return true;
 			else 
 				return false;
 		case 12:
-			if(day1 <= 31)
+			if(day <= 31)
 				return true;
 			else 
 				return false;
 		}
-	return true;
+		return true;
 	}
 	
-	public String getSeasonMonth(){
+	public void getSeasonMonth(){
+		int month = Integer.parseInt(month1);
 		String season = new String(" ");
-		switch(month1){
+		switch(month){
 			case 1:
 			season = "Invierno";
 			break;
@@ -177,19 +169,20 @@ public class Date {
 			season = "Verano";
 			break;
 			case 9:
-			season = "Otoño";
+			season = "Otonio";
 			break;
 			case 10:
-			season = "Otoño";
+			season = "Otonio";
 			break;
 			case 11:
-			season = "Otoño";
+			season = "Otonio";
 			break;
 			case 12:
 			season = "Invierno";
 			break;	
 		}
-		return season;		
+		//return season;
+		System.out.println(season);
 	}
 	
 	public void imprimirDate(){
@@ -197,30 +190,66 @@ public class Date {
 	}
 	
 	public  void mesesRestantes(){
-		int aux = month1;
+		int month = Integer.parseInt(month1);
+		int aux = month;
 		int contador=0;
 		for(int i=aux;i<12;i++){
 			contador++;
 		}
-		System.out.println("Quedan "+contador+" meses para final de año");
+		System.out.println("Quedan "+contador+" meses para final de anio");
 	}
 
 	public void diasRestantesMes(){
-		int aux = day1;
+		int day = Integer.parseInt(day1);
+		int month = Integer.parseInt(month1);
+		int aux = day;
 		int diaFinal;
-		if(month1==1|| month1==3||month1==5|| month1==7||month1==8|| month1==10||month1==12){
+		if(month==1|| month==3||month==5|| month==7||month==8|| month==10||month==12){
 			diaFinal=31;
 		}
-		if(month1==2){
+		else if(month==2){
 			diaFinal=28;
 		}
 		else{
 			diaFinal=30;
 		}
 		
-		for(int i=aux;i<diaFinal;i++){
-			System.out.println(aux+"-"+month1+"-"+year1);
+		for(int i=aux+1;i<diaFinal+1;i++){
+			System.out.println(i+"-"+month1+"-"+year1);
 		}
 
+	}
+
+	public void mesesMismosDias(){
+		String[] meses31 = {"Enero","Marzo","Mayo","Julio","Agosto","Octubre","Diciembre"};
+		String[] meses30 = {"Abril","Junio","Septiembre","Noviembre"};
+		String[] mes28 = {"Febrero"};
+		int month = Integer.parseInt(month1);
+		String[] mesesPrint;
+		if(month==1|| month==3||month==5|| month==7||month==8|| month==10||month==12){
+			mesesPrint = meses31;
+		}
+		else if(month==2){
+			mesesPrint=mes28;
+		}
+		else{
+			mesesPrint = meses30;
+		}
+		for(int i=0;i<mesesPrint.length;i++){
+			System.out.println(mesesPrint[i]);
+		}
+	}
+
+	public void cuentaDias(){
+		int day = Integer.parseInt(day1);
+		int month = Integer.parseInt(month1);
+		int diasTranscurridos = 0;
+		
+		int[]diasMes={31,28,31,30,31,30,31,31,30,31,30,31};
+		for(int i=0;i<month-1;i++){
+			diasTranscurridos = diasTranscurridos+diasMes[i];
+		}
+		diasTranscurridos=diasTranscurridos+day;
+		System.out.println(diasTranscurridos);
 	}
 }

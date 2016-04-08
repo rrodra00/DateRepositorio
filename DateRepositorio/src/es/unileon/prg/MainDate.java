@@ -1,7 +1,21 @@
-public class Date {
+package es.unileon.prg;
+
+public class MainDate {
 
 	public static void main(String[] args) {
+		Date myDate;
+		myDate = new Date();
 		
-	}
-
+		myDate.entrada();
+		myDate.isSameYear();
+		myDate.getMonthName();
+		boolean diaOk = myDate.checkDay();
+		System.out.println(diaOk);
+		myDate.getSeasonMonth();
+		myDate.imprimirDate();
+		myDate.mesesRestantes();
+		myDate.diasRestantesMes();
+		myDate.mesesMismosDias();
+		myDate.cuentaDias();
+		}
 }
